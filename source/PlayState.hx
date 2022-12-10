@@ -420,10 +420,10 @@ class PlayState extends MusicBeatState
 		camHUD = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
 
-		FlxG.cameras.reset(camGame);
-		FlxG.cameras.add(camHUD);
+		FlxG..reset(camGame);
+		FlxG..add(camHUD);
 
-	    FlxCamera.defaultCameras = [camGame];
+	    FlxCamera.default = [camGame];
 		
 		persistentUpdate = true;
 		persistentDraw = true;
@@ -1739,7 +1739,7 @@ class PlayState extends MusicBeatState
 			songName.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			songName.scrollFactor.set();
 			add(songName);
-			songName.cameras = [camHUD];
+			songName. = [camHUD];
 		}
 
 		healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('healthBar'));
@@ -1834,28 +1834,28 @@ class PlayState extends MusicBeatState
 		iconP2.y = healthBar.y - (iconP2.height / 2);
 		add(iconP2);
 
-		strumLineNotes.cameras = [camHUD];
-		notes.cameras = [camHUD];
-		healthBar.cameras = [camHUD];
-		healthBarBG.cameras = [camHUD];
-		iconP1.cameras = [camHUD];
-		iconP2.cameras = [camHUD];
-		scoreTxt.cameras = [camHUD];
-		doof.cameras = [camHUD];
+		strumLineNotes. = [camHUD];
+		notes. = [camHUD];
+		healthBar. = [camHUD];
+		healthBarBG. = [camHUD];
+		iconP1. = [camHUD];
+		iconP2. = [camHUD];
+		scoreTxt. = [camHUD];
+		doof. = [camHUD];
 		if (FlxG.save.data.songPosition)
 		{
-			songPosBG.cameras = [camHUD];
-			songPosBar.cameras = [camHUD];
+			songPosBG. = [camHUD];
+			songPosBar. = [camHUD];
 		}
-		kadeEngineWatermark.cameras = [camHUD];
+		kadeEngineWatermark. = [camHUD];
 		if (loadRep)
-			replayTxt.cameras = [camHUD];
+			replayTxt. = [camHUD];
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
 
-		// cameras = [FlxG.cameras.list[1]];
+		//  = [FlxG..list[1]];
 		startingSong = true;
 
 		trace('starting');
@@ -1966,6 +1966,11 @@ class PlayState extends MusicBeatState
 
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN, handleInput);
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, releaseInput);
+		
+		#if mobile
+    addMobileControls();
+    #end
+		
 		super.create();
 	}
 
@@ -2537,9 +2542,9 @@ class PlayState extends MusicBeatState
 			songName.scrollFactor.set();
 			add(songName);
 
-			songPosBG.cameras = [camHUD];
-			songPosBar.cameras = [camHUD];
-			songName.cameras = [camHUD];
+			songPosBG. = [camHUD];
+			songPosBar. = [camHUD];
+			songName. = [camHUD];
 		}
 
 		// Song check real quick
@@ -4816,7 +4821,7 @@ class PlayState extends MusicBeatState
 		coolText.screenCenter();
 		coolText.x = FlxG.width * 0.55;
 		coolText.y -= 350;
-		coolText.cameras = [camHUD];
+		coolText. = [camHUD];
 		//
 
 		var rating:FlxSprite = new FlxSprite();
@@ -4993,9 +4998,9 @@ class PlayState extends MusicBeatState
 			comboSpr.updateHitbox();
 			rating.updateHitbox();
 
-			currentTimingShown.cameras = [camHUD];
-			comboSpr.cameras = [camHUD];
-			rating.cameras = [camHUD];
+			currentTimingShown. = [camHUD];
+			comboSpr. = [camHUD];
+			rating. = [camHUD];
 
 			var seperatedScore:Array<Int> = [];
 
@@ -5026,7 +5031,7 @@ class PlayState extends MusicBeatState
 				numScore.screenCenter();
 				numScore.x = rating.x + (43 * daLoop) - 50;
 				numScore.y = rating.y + 100;
-				numScore.cameras = [camHUD];
+				numScore. = [camHUD];
 
 				if (!curStage.startsWith('school'))
 				{
