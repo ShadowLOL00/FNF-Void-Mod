@@ -30,6 +30,10 @@ class PauseSubState extends MusicBeatSubstate
 	
 	var offsetChanged:Bool = false;
 
+	#if mobile
+  addVirtualPad(LEFT_FULL, A_B);
+  #end
+	
 	public function new(x:Float, y:Float)
 	{
 		super();
