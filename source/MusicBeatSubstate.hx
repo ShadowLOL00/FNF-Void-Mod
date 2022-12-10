@@ -15,6 +15,9 @@ class MusicBeatSubstate extends FlxSubState
 	public function new()
 	{
 		super();
+		#if mobile
+    addVirtualPad(LEFT_FULL, A_B);
+    #end
 	}
 
 	private var lastBeat:Float = 0;
