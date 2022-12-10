@@ -272,6 +272,10 @@ class FreeplayState extends MusicBeatState
 
 		charInputs = "";
 
+		#if mobile
+    addVirtualPad(LEFT_FULL, A_B);
+    #end
+		
 		super.create();
 	}
 
