@@ -29,10 +29,6 @@ class PauseSubState extends MusicBeatSubstate
 	var perSongOffset:FlxText;
 	
 	var offsetChanged:Bool = false;
-
-	#if mobile
-  addVirtualPad(LEFT_FULL, A_B);
-  #end
 	
 	public function new(x:Float, y:Float)
 	{
@@ -101,6 +97,10 @@ class PauseSubState extends MusicBeatSubstate
 		changeSelection();
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+		
+	#if mobile
+  addVirtualPad(LEFT_FULL, A_B);
+  #end
 	}
 
 	override function update(elapsed:Float)
